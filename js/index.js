@@ -1,40 +1,14 @@
 /* index.js */
 
-import Bill from "./bill.js";
+import data from "./data.js";
+import Weather from "./weather.js";
 
-const form = document.querySelector("#amount-form");
-const amount = document.querySelector("#amount");
-const tbody = document.querySelector("#tbody");
+let cityCountry = document.querySelector("#city-country");
+let icon = document.querySelector("#icon");
+let temperature = document.querySelector("#temperature");
 
-const bill = new Bill();
+let weather = new Weather(data);
 
-function render() {
-    tbody.innerHTML = "";
-    bill.amounts.forEach(function (amount) {
-      tbody.insertAdjacentHTML("beforeend", `<tr>
-        <td>Paid</td>
-        <td>${amount}</td>
-	    </tr>`);
-    });
-    tbody.insertAdjacentHTML("beforeend", `<tr class="separator"></tr>
-      <tr>
-        <th>Total</th>
-        <td>${bill.getTotal()}</td>
-      </tr>
-      <tr>
-        <th>Number of people</th>
-        <td>${bill.getCount()}</td>
-      </tr>
-      <tr>
-        <th>Amount per person</th>
-        <td>${bill.getAverage()}</td>
-      </tr>`);
-}
-
-form.addEventListener("submit", event => {
-  event.preventDefault();
-
-  bill.addAmount(amount.value);
-  render();
-  amount.value = "";
-});
+cityCountry.textContent = weather.getLocation();
+icon.src = weather.getIcon();
+temperature.innerHTML = weather.getTemperature();

@@ -212,6 +212,7 @@ input:focus {
 .table {
   width: 100%;
   border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
 .table thead {
@@ -239,4 +240,22 @@ input:focus {
 
 .table tbody tr:nth-child(2n + 1) {
   background-color: var(--neutral-5);
+}
+
+/*********/
+
+.card {
+  background-color: white;
+  padding: 15px 20px;
+  border-radius: 25px;
+}
+
+#icon {
+  border-radius: 50%;
+}
+
+.icon-temp {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
