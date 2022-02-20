@@ -11,19 +11,16 @@
 
 <body>
   <nav class="navbar">
-    <h1 class="nav-brand">Weather report</h1>
+    <h1 class="nav-brand">Your age next year</h1>
   </nav>
-  
   <main class="container">
-    <div class="card">
-      <h2 id="city-country"></h2>
-      <div class="icon-temp">
-        <img src="" alt="weather icon" id="icon" />
-        <h3 id="temperature"></h3>
-      </div>
+    <div>
+      <label class="label" for="component-name">Enter age</label>
+      <input type="number" class="input" placeholder="Enter age" id="your-age" min="0" max="130" autocomplete="off">
     </div>
+    <p>Next year, you will be <span id="next-age"></span>.</p>
   </main>
-  <script type="module" src="js/index.js"></script>
+  <script type="module" src="js/script.js"></script>
      
 </body>
 
