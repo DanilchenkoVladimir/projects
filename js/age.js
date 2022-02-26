@@ -3,9 +3,9 @@
  * @param {string} age
  */
  export function getNextAge(age) {
-	let yourAge = Number.parseInt(age, 10);
-	console.log(typeof yourAge)
-	return yourAge + 1;
-
-	
+	if (age.length > 0){
+		return Number.parseInt(age, 10) + 1;
+	} else {
+		return '0'
+	}
 }
