@@ -1,10 +1,9 @@
-
 /* script.js */
-import {getNextAge} from "/js/age.js";
+import {getDropdown} from "./countries.js";
 
-const age = document.querySelector("#your-age");
-const nextAge = document.querySelector("#next-age");
+const countries = ["Netherlands", "Japan", "Mongolia"];
 
-age.addEventListener("keyup", () => {
-  nextAge.textContent = getNextAge(age.value);
-});
+const html = getDropdown(countries);
+
+const select = document.querySelector("#countries-dropdown");
+select.innerHTML = html;
