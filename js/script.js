@@ -1,9 +1,10 @@
 /* script.js */
-import {getDropdown} from "./countries.js";
 
-const countries = ["Netherlands", "Japan", "Mongolia"];
+import {renderTableRows} from "./nutrition.js";
 
-const html = getDropdown(countries);
+const data = [["Carbs", "17g"], ["Protein", "19g"], ["Fat", "5g"]];
 
-const select = document.querySelector("#countries-dropdown");
-select.innerHTML = html;
+const html = renderTableRows(data);
+
+const tbody = document.querySelector("#nutrition-table tbody");
+tbody.insertAdjacentHTML("beforeend", html);
