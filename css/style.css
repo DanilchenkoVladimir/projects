@@ -1,3 +1,4 @@
+
 :root {
   --white: #fff;
   --black: #000;
@@ -27,7 +28,6 @@
 body {
   background-color: var(--neutral-5);
   margin: 0;
-	font-family: 'Open-Sans', sans-serif;
 }
 
 h1 {
@@ -68,7 +68,6 @@ a:hover {
   margin: 0 auto;
   padding: 0 20px;
 }
-
 
 /* FORMS */
 .form h2 {
@@ -142,32 +141,8 @@ input:not(.btn):focus {
   color: initial;
 }
 
-.table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.table thead {
-  background-color: var(--primary-1);
-  color: white;
-  border: 1px solid white;
-}
-
-.table th {
-  padding: 15px;
-}
-.table td {
-  padding: 10px;
-}
-
-.table tbody {
-  font-size: 18px;
-  border: 1px solid white;
-}
-.table tbody tr:nth-child(2n) {
-  background-color: white;
-}
-
-.table tbody tr:nth-child(2n + 1) {
-  background-color: var(--neutral-5);
+select {
+	width: 300px;
+  padding: 10px 15px;
+  border-radius: 8px;
 }
