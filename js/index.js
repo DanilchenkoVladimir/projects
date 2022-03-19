@@ -1,25 +1,52 @@
 /* index.js */
+import Todos from "./todos.js";
 
-import Passport from "./passport.js";
+const form = document.querySelector("#todo-form");
+const title = document.querySelector("#todo-title");
+const category = document.querySelector("#todo-category");
+const list = document.querySelector("#todo-list");
+const filter = document.querySelector("#todo-filter");
+const count = document.querySelector("#todo-count");
 
-let firstName = document.querySelector("#first-name");
-let lastName = document.querySelector("#last-name");
+const render = (items, itemsCount) => {
+  count.textContent = `(${itemsCount})`;
+  list.innerHTML = items
+	  .map((todo) => `<li>${todo.title} [${todo.category}]</li>`)
+	  .join("");
+};
 
-let answer1 = document.querySelector("#answer1");
-let answer2 = document.querySelector("#answer2");
-let answer3 = document.querySelector("#answer3");
-let answer4 = document.querySelector("#answer4");
-let answer5 = document.querySelector("#answer5");
+const todos = new Todos();
 
-function render() {
-  let passport = new Passport(firstName.value, lastName.value);
-
-  answer1.textContent = passport.getFirstName();
-  answer2.textContent = passport.getLastName();
-  answer3.textContent = passport.getFullName();
-  answer4.textContent = passport.getInitials();
-  answer5.textContent = passport.getIsValidName();
+try {
+  render(todos.getAll(), todos.getCount());
+} catch (error) {
+  console.error(error);
 }
 
-firstName.addEventListener("keyup", render);
-lastName.addEventListener("keyup", render);
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  try {
+    todos.add(title.value, category.value);
+    render(todos.getAll(), todos.getCount());
+  } catch (error) {
+    console.error(error);
+  }
+  title.value = "";
+});
+
+filter.addEventListener("change", () => {
+  try {
+    if (filter.value === "work") {
+      // filter work
+      render(todos.getWork(), todos.getWorkCount());
+    } else if (filter.value === "personal") {
+      // filter personal
+      render(todos.getPersonal(), todos.getPersonalCount());
+    } else {
+      // show all
+      render(todos.getAll(), todos.getCount());
+    }
+  } catch (error) {
+    console.error(error);
+  }
+});

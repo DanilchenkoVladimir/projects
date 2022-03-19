@@ -10,56 +10,50 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <h1 class="nav-brand">Passport preview</h1>
-      </nav>
-      
-      <main class="container">
-        <div class="names-input">
-          <div>
-            <label class="label" for="component-name">Enter your first name</label>
-            <input type="text" class="input" placeholder="Your first name" id="first-name" autocomplete="off">
-          </div>
-          <div>
-            <label class="label" for="component-name">Enter your last name</label>
-            <input type="text" class="input" placeholder="Your last name" id="last-name" autocomplete="off">
-          </div>
-        </div>
-      
-        <div class="table-container">
-          <table class="table" border="1">
-            <thead>
-              <tr>
-                <th width="200px"></th>
-                <th>Your data</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>First name</td>
-                <td id="answer1"></td>
-              </tr>
-              <tr>
-                <td>Last name</td>
-                <td id="answer2"></td>
-              </tr>
-              <tr>
-                <td>Full Name</td>
-                <td id="answer3"></td>
-              </tr>
-              <tr>
-                <td>Initials</td>
-                <td id="answer4"></td>
-              </tr>
-              <tr>
-                <td>Valid name?</td>
-                <td id="answer5"></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </main>
-      <script type="module" src="js/index.js"></script>
+  <nav id="navbar">
+    <a href="" class="nav-brand">App</a>
+    <ul>
+      <li class="nav-item"><a href="about.html">About us</a></li>
+      <li><a href="" class="nav-item btn btn-default">Register</a></li>
+    </ul>
+  </nav>
+  
+  <div class="container" id="main">
+    <h1>Welcome to our app</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus,
+      voluptatem.
+    </p>
+  
+    <form id="todo-form">
+      <label for="todo-title">Todo</label>
+      <input id="todo-title" type="text" placeholder="Enter your todo" />
+      <select id="todo-category">
+        <option value="work">Work</option>
+        <option value="personal">Personal</option>
+      </select>
+      <input type="submit" class="btn btn-outline" value="Add" />
+    </form>
+    <hr class="separator" />
+    <div>
+      <label>
+        Filter:
+        <select id="todo-filter">
+          <option value="">Show all</option>
+          <option value="work">Work only</option>
+          <option value="personal">Personal only</option>
+        </select>
+      </label>
+      <h3>Todos <span id="todo-count"></span></h3>
+      <ul id="todo-list"></ul>
+    </div>
+  </div>
+  
+  <footer id="footer-wrapper">
+    <a href="about.html" target="_blank">About us</a>
+    <a href="contact.html" target="_blank">Contact us</a>
+  </footer>
+  <script type="module" src="js/index.js"></script>
 </body>
 
 </html>
